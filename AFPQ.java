@@ -1,6 +1,4 @@
 //Author : Younes Bouhaba
-//Date submitted : 30/03/2023
-//Comp 352
 
 import java.util.Comparator;
 
