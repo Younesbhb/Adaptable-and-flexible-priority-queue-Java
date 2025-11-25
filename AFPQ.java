@@ -37,6 +37,12 @@ public class AFPQ {
         public Object getValue() {
             return value;
         }
+
+        // String representation of the entry
+        @Override
+        public String toString() {
+            return "(" + key + ":" + value + ")";
+        }
     }
 
     // Ensure the heap has enough capacity by doubling its size if needed
@@ -193,6 +199,39 @@ public class AFPQ {
         for (int i = (size / 2) - 1; i >= 0; i--) {
             downheap(i);
         }
+    }
+
+    // Display the heap contents in a readable format
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("Heap is empty");
+            return;
+        }
+
+        System.out.println("Heap (" + state() + "-Heap, size=" + size + "):");
+        for (int i = 0; i < size; i++) {
+            System.out.print(heap[i] + " ");
+        }
+        System.out.println();
+    }
+
+    // Convert the heap to a string representation
+    @Override
+    public String toString() {
+        if (isEmpty()) {
+            return "AFPQ[]";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("AFPQ[");
+        for (int i = 0; i < size; i++) {
+            sb.append(heap[i]);
+            if (i < size - 1) {
+                sb.append(", ");
+            }
+        }
+        sb.append("]");
+        return sb.toString();
     }
 }
 

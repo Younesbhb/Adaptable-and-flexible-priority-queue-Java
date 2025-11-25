@@ -14,6 +14,7 @@ public class Main {
         // 2. Check size and state of min-heap
         System.out.println("Size: " + minHeap.size()); // Size: 5
         System.out.println("State: " + minHeap.state()); // State: Min
+        minHeap.display();
 
         // 3. Check top of min-heap
         System.out.println("Top: " + minHeap.top().getValue()); // Top: E
@@ -29,6 +30,7 @@ public class Main {
 
         // 7. Check state of max-heap
         System.out.println("State: " + minHeap.state()); // State: Max
+        minHeap.display();
 
         // 8. Check top of max-heap
         System.out.println("Top: " + minHeap.top().getValue()); // Top: D
